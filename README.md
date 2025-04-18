@@ -8,22 +8,3 @@ By the end of this module, you’ll be skilled in managing files efficiently in 
 
 
 
-def modify(text):
-    return text.upper()
-
-def main():
-    filename = input("Filename to read: ")
-
-    try:
-        with open(filename, 'r') as f:
-            data = f.read()
-        updated = modify(data)
-        with open("modified_" + filename, 'w') as f:
-            f.write(updated)
-        print("File saved as modified_" + filename)
-    except FileNotFoundError:
-        print("File not found.")
-    except IOError:
-        print("File can't be read or written.")
-
-main()
